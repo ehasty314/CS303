@@ -9,37 +9,41 @@ int main()
     int array[x];
     int count;
 
+// Reads the data from the array text file.
+
     ifstream inputFile;
     inputFile.open("assignment_1_array.txt");
     if (!inputFile)
-        cout << "Error";
+        cout << "Error"; //If does not open file, error.
     count = 0;
     while (!inputFile.eof())
     {
         inputFile >> array[count];
-        count++;
+        count++; //Reads each integer into an array index
     }
     x = count;
-    cout << "Array reads: ";
+    cout << "Array reads: "; //Reads array
     for (count = 0; count < x; count++)
         cout << " " << array[count];
     cout << endl;
 
+// Search for an index value
 
     int i;
     int num;
     cout << "Enter a number to search for in array\n";
     cin >> num;
-    for(i=0;i<x;i++){
+    for(i=0;i<x;i++){ // Linear search through the array to find the value
         if(array[i] == num){
             cout << "Element found at index " << i << endl;
             break;
         }
     }
-    if(i==x){
+    if(i==x){ // If not found, notify user
         cout << "Element not present in array\n";
     }
     
+    // Access data in the array and modify, as well as see old and new value
 
     int oldnum;
     int newnum;
@@ -54,6 +58,8 @@ int main()
     array[indexspot] = newnum;
     cout << "New value is saved, " << array[indexspot] << endl;
 
+// Append new value at the end of the array
+
     int appendlength = x;
     int appendval;
     cout << "Enter the new element.\n";
@@ -65,6 +71,9 @@ int main()
         cout << array[t] << " ";
 
     cout << endl;
+
+    // Finds the first instance of a value in the array, and deletes it
+    // Adjusts the array size accordingly
 
     int key, p ,index = -1;
     cout << "Enter element to delete\n";
