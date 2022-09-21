@@ -2,7 +2,7 @@
 Emmitt Hasty![3CAC8296-8E10-4902-9B54-1AB2124407D8](https://user-images.githubusercontent.com/112575799/191616133-605006ed-69ff-4502-9dde-f240e38e751c.jpeg)
 
 Assignments for CS303
-To run code, using bash, type "g++ program_final.cpp header.cpp" and hit enter.
+To run code, using bash terminal, type "g++ program_final.cpp header.cpp" and hit enter.
 Then type "./a.out" and hit enter
 
 The following code will read:
