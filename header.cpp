@@ -28,7 +28,7 @@ int read_array(int arr[], int x) {
     return 0;
 }
 
-int int_search(int arr[], int num) {
+int int_search(int arr[], int num) { // Search the array for the first instance of a given value, then display the index of the number
     int x = 100;
     int i;
     for(i=0;i<x;i++){ // Linear search through the array to find the value
@@ -43,7 +43,7 @@ int int_search(int arr[], int num) {
     return 0;
 }
 
-int int_mod(int arr[]) {
+int int_mod(int arr[]) { // Modify a value at a given index, then display both old and new number.
     int oldnum;
     int newnum;
     int indexspot;
@@ -60,7 +60,7 @@ int int_mod(int arr[]) {
     return 0;
 }
 
-int int_append(int arr[], int x) {
+int int_append(int arr[], int x) { // Add an extra element at the end of array, appended.
     int appendlength = x;
     int appendval;
     cout << "Enter the new element.\n";
@@ -75,7 +75,7 @@ int int_append(int arr[], int x) {
     return 0;
 }
 
-int int_del(int arr[], int appendlength) {
+int int_del(int arr[], int appendlength) { // Delete the first instance of a given number and resize the array
     int key, p ,index = -1;
     cout << "Enter element to delete\n";
     cin >> key;

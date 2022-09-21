@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    int x = 100;
+    int x = 100; // Size of the array
     int array[x];
     read_array(array, x);
 
