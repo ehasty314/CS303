@@ -1,9 +1,14 @@
-int read_array(int);
+#ifndef HEADER_H_
+#define HEADER_H_
 
-int int_search(int);
+int read_array(int arr[], int x);
 
-int int_mod(int, int);
+int int_search(int array[], int num);
 
-int int_append(int);
+int int_mod(int arr[]);
 
-int int_del(int);
+int int_append(int arr[], int x);
+
+int int_del(int arr[], int appendlength);
+
+#endif

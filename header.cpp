@@ -1,89 +1,88 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <vector>
 using namespace std;
 
-int x = 100;
-int read_array()
-{
-    int array[x];
+int read_array(int arr[], int x) {
     int count;
+
+// Reads the data from the array text file.
 
     ifstream inputFile;
     inputFile.open("assignment_1_array.txt");
     if (!inputFile)
-        cout << "Error";
+        cout << "Error"; //If does not open file, error.
     count = 0;
     while (!inputFile.eof())
     {
-        inputFile >> array[count];
-        count++;
+        inputFile >> arr[count];
+        count++; //Reads each integer into an array index
     }
     x = count;
-    cout << "Array reads: ";
+    cout << "Array reads: "; //Reads array
     for (count = 0; count < x; count++)
-        cout << " " << array[count];
+        cout << " " << arr[count];
     cout << endl;
+
     return 0;
 }
 
-int int_search() 
-{
+int int_search(int arr[], int num) {
+    int x = 100;
     int i;
-    int num;
-    cout << "Enter a number to search for in array\n";
-    cin >> num;
-    for(i=0;i<x;i++){
-        if(array[i] == num){
+    for(i=0;i<x;i++){ // Linear search through the array to find the value
+        if(arr[i] == num){
             cout << "Element found at index " << i << endl;
             break;
         }
     }
-    if(i==x){
+    if(i==x){ // If not found, notify user
         cout << "Element not present in array\n";
     }
+    return 0;
 }
 
-int int_mod()
-{
-     int oldnum;
+int int_mod(int arr[]) {
+    int oldnum;
     int newnum;
     int indexspot;
     cout << "Type index number to access data at that index.\n";
     cin >> indexspot;
-    cout << "Value at spot " << indexspot << " is " << array[indexspot] << endl;
-    oldnum = array[indexspot];
+    cout << "Value at spot " << indexspot << " is " << arr[indexspot] << endl;
+    oldnum = arr[indexspot];
     cout << "Enter new value for array value.\n";
     cin >> newnum;
     cout << "Replacing value " << oldnum << " with " << newnum << endl;
-    array[indexspot] = newnum;
-    cout << "New value is saved, " << array[indexspot] << endl;
+    arr[indexspot] = newnum;
+    cout << "New value is saved, " << arr[indexspot] << endl;
+
+    return 0;
 }
 
-int int_append()
-{
+int int_append(int arr[], int x) {
     int appendlength = x;
     int appendval;
     cout << "Enter the new element.\n";
     cin >> appendval;
-    array[appendlength]=appendval;
+    arr[appendlength]=appendval;
     appendlength++;
     cout << "New array:\n";
     for(int t=0; t<appendlength; t++)
-        cout << array[t] << " ";
+        cout << arr[t] << " ";
 
     cout << endl;
+    return 0;
 }
 
-int int_del()
-{
+int int_del(int arr[], int appendlength) {
     int key, p ,index = -1;
     cout << "Enter element to delete\n";
     cin >> key;
 
     for(p = 0;p<appendlength;p++)
     {
-        if(array[p] == key)
+        if(arr[p] == key)
         {
             index = p;
             break;
@@ -92,14 +91,15 @@ int int_del()
     if(index != -1)
     {
         for(p = index; p < appendlength-1; p++)
-            array[p] = array[p+1];
+            arr[p] = arr[p+1];
         
         cout << "New array\n";
         for(p=0;p<appendlength-1;p++)
-            cout << array[p] << " ";
+            cout << arr[p] << " ";
     }
     else
         cout<< "Element not found\n";
 
     cout << endl;
+    return 0;
 }
