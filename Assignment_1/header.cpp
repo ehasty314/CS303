@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <stdexcept>
 #include <vector>
 using namespace std;
 
@@ -10,7 +11,7 @@ int read_array(int arr[], int x) {
 // Reads the data from the array text file.
 
     ifstream inputFile;
-    inputFile.open("assignment_1_array.txt");
+    inputFile.open("Assignment_1/assignment_1_array.txt");
     if (!inputFile)
         cout << "Error"; //If does not open file, error.
     count = 0;
@@ -20,7 +21,7 @@ int read_array(int arr[], int x) {
         count++; //Reads each integer into an array index
     }
     x = count;
-    cout << "Array reads: "; //Reads array
+    cout << "Array reads:\n"; //Reads array
     for (count = 0; count < x; count++)
         cout << " " << arr[count];
     cout << endl;
@@ -67,6 +68,7 @@ int int_mod(int arr[]) { // Modify a value at a given index, then display both o
     catch(int e) {
         cout << "An error has occurred, index spot " << e << " does not exist" << endl;
         indexspot = 0;
+        abort();
     }
     
 
@@ -76,15 +78,21 @@ int int_mod(int arr[]) { // Modify a value at a given index, then display both o
 int int_append(int arr[], int x) { // Add an extra element at the end of array, appended.
     int appendlength = x;
     int appendval;
-    cout << "Enter the new element.\n";
-    cin >> appendval;
-    arr[appendlength]=appendval;
-    appendlength++;
-    cout << "New array:\n";
-    for(int t=0; t<appendlength; t++)
-        cout << arr[t] << " ";
+    try{
+        cout << "Enter the new element.\n";
+        cin >> appendval;
+        arr[appendlength]=appendval;
+        appendlength++;
+        cout << "New array:\n";
+        for(int t=0; t<appendlength; t++)
+            cout << arr[t] << " ";
 
-    cout << endl;
+        cout << endl;
+    }
+    catch (...) {
+        cerr<< "Undefined exception occurred in read_int\n";
+        abort();
+        }
     return 0;
 }
 
