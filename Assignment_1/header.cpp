@@ -47,15 +47,28 @@ int int_mod(int arr[]) { // Modify a value at a given index, then display both o
     int oldnum;
     int newnum;
     int indexspot;
-    cout << "Type index number to access data at that index.\n";
-    cin >> indexspot;
-    cout << "Value at spot " << indexspot << " is " << arr[indexspot] << endl;
-    oldnum = arr[indexspot];
-    cout << "Enter new value for array value.\n";
-    cin >> newnum;
-    cout << "Replacing value " << oldnum << " with " << newnum << endl;
-    arr[indexspot] = newnum;
-    cout << "New value is saved, " << arr[indexspot] << endl;
+    int size = 99;
+    try{
+        std::cout << "Type index number to access data at that index.\n";
+        cin >> indexspot;
+        if (indexspot > size || indexspot < 0) {
+            throw indexspot;
+        }
+        else {
+            std::cout << "Value at spot " << indexspot << " is " << arr[indexspot] << endl;
+            oldnum = arr[indexspot];
+            std::cout << "Enter new value for array value.\n";
+            cin >> newnum;
+            std::cout << "Replacing value " << oldnum << " with " << newnum << endl;
+            arr[indexspot] = newnum;
+            std::cout << "New value is saved, " << arr[indexspot] << endl;
+        }
+    }
+    catch(int e) {
+        cout << "An error has occurred, index spot " << e << " does not exist" << endl;
+        indexspot = 0;
+    }
+    
 
     return 0;
 }
