@@ -1,34 +1,24 @@
 #include <iostream>
 #include <queue>
+#include "/Users/ehast/Documents/GitHub/CS303/Assignment_3/move_header.h"
 using namespace std;
 
 
-std::queue<int> myQ;//declaring Queue
-
-void move_to_rear(){
-
-    int num=myQ.front();
-
-    myQ.pop();
-
-    myQ.push(num);
-}
-
 int main ()
 {
-    myQ.push(1);
-    myQ.push(2);
-    myQ.push(3);
-    myQ.push(4);
-    myQ.push(5);
-    myQ.push(6);
-    myQ.push(7);
+    std::queue <int> myQueue;//declaring Queue
+    myQueue.push(1);
+    myQueue.push(2);
+    myQueue.push(3);
+    myQueue.push(4);
+    myQueue.push(5);
+    myQueue.push(6);
+    myQueue.push(7);
 
     std::cout<<"Before removing front"<<std::endl;
-    std::cout<<myQ.front()<<std::endl;
+    std::cout<<myQueue.front()<<std::endl;
     std::cout<<"After removing front and adding it to rear"<<std::endl;
-    move_to_rear();
-    std::cout<<myQ.front()<<std::endl;
+    move_to_rear(myQueue);
 
 return 0;
 }
