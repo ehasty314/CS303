@@ -6,7 +6,7 @@ using namespace std;
 
 int main ()
 {
-    std::queue <int> myQueue;//declaring Queue
+    std::queue <int> myQueue;//declaring Queue and initializing
     myQueue.push(1);
     myQueue.push(2);
     myQueue.push(3);

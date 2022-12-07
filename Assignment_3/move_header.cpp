@@ -5,11 +5,11 @@ using namespace std;
 
 void move_to_rear(std::queue<int> myQ){
 
-    int num=myQ.front();
+    int num=myQ.front(); //Read the first element of the queue into num
 
-    myQ.pop();
+    myQ.pop(); //Remove the first element of the queue
 
-    myQ.push(num);
+    myQ.push(num); //Add num to the end of the queue
 
     cout << myQ.front() << endl;
 }

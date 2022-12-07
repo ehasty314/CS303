@@ -4,14 +4,14 @@
 
 using namespace std;
 
-// Write a C++ method that outputs the data stored in stateDataMap.
+// Output the data stored in stateDataMap.
 void print_map(map<string, string> stateDataMap) {
     for (map<string, string>::iterator it = stateDataMap.begin(); it != stateDataMap.end(); it++) {
         cout << "State: " << it->first << ", Capital: " << it->second << endl;
     }
 }
 
-// Write a C++ method that outputs the capitalName using the stateName which will be entered by the user.
+// Output the capitalName using the stateName 
 void print_capital(map<string, string> stateDataMap, string state) {
     map<string, string>::iterator it = stateDataMap.find(state);
     if (it == stateDataMap.end()) {
@@ -22,10 +22,10 @@ void print_capital(map<string, string> stateDataMap, string state) {
 }
 
 int main() {
-    // Declare the map container stateDataMap to store pairs of the form (stateName, capitalName), where stateName and capitalName are variables of type string:
+    // Declare map container stateDataMap 
     map<string, string> stateDataMap;
 
-    // Write C++ statements that add the following pairs to stateDataMap:
+    // Add the following pairs to stateDataMap:
     // (Nebraska, Lincoln), (New York, Albany), (Ohio, Columbus), (California, Sacramento), (Massachusetts, Boston), and (Texas, Austin).
     stateDataMap["Nebraska"] = "Lincoln";
     stateDataMap["New York"] = "Albany";
@@ -34,13 +34,13 @@ int main() {
     stateDataMap["Massachusetts"] = "Boston";
     stateDataMap["Texas"] = "Austin";
 
-    // Write a C++ method that outputs the data stored in stateDataMap.
+    // Output the data stored in stateDataMap
     print_map(stateDataMap);
 
-    // Write a C++ statement that changes the capital of California to Los Angeles
+    // Change the capital of California to Los Angeles
     stateDataMap["California"] = "Los Angeles";
 
-    // Write a C++ method that outputs the capitalName using the stateName which will be entered by the user.
+    // Output the capitalName using the stateName
     string state;
     cout << "Enter state name: ";
     getline(cin, state);
